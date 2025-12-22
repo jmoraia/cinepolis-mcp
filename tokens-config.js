@@ -25,7 +25,7 @@ const sd = new StyleDictionary({
       buildPath: './',
       files: [
         {
-          destination: 'variables.css',
+          destination: '/src/styles/tokens/_variables.scss',
           format: 'css/variables',
           /*options: {
             outputReferences: true,

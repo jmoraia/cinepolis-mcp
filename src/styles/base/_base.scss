@@ -1,0 +1,9 @@
+@layer base {
+  body {
+    background-color : var(--color-background-body);
+  }
+
+  a {
+    color : var(--color-text-brand);
+  }
+}
