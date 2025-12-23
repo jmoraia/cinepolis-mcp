@@ -19,7 +19,6 @@ const MovieCard = ({
     </div>
     <header className={s?.header}>
       <div className={s?.left}>
-        <ExperienceTag />
         <ContentRatingTag type={rating}/>
         <time className={s?.minutes}>{minutes} min</time>
       </div>
