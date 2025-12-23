@@ -1,0 +1,9 @@
+.experience-tag {
+  display: inline-flex;
+  padding: var(--eds-spacing-spacing-100) var(--eds-spacing-spacing-150);
+  border-radius: var(--eds-round-full);
+  background: var(--eds-color-bg-surface-decorative-inverse);
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
