@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+@layer base {
+    /* ----- Content ----- */
+    body,
+    .content-base {
+      color       : var(--eds-color-text-content-default);
+      font-family : 'Monserrat', sans-serif;
+      font-weight : 500;
+      font-size   : var(--eds-font-size-display-medium);
+      line-height : var(--font-height-content);
+    }
+  
+    .content-big {
+      font-size : var(--font-size-content-big);
+    }
+  
+    .content-small {
+      font-size : var(--font-size-content-small);
+    }
+  
+    .content-smaller {
+      font-size : var(--font-size-content-smaller);
+    }
+  
+    /* ----- Titles ----- */
+    h1, h2, h3, h4, h5, h6,
+    .title-biggest,
+    .title-big,
+    .title-base,
+    .title-small,
+    .title-smaller {
+      color          : var(--color-text-prominent);
+      font-family    : var(--font-family-title), sans-serif;
+      line-height    : var(--font-height-title);
+      font-weight    : var(--font-weight-title);
+      letter-spacing : 0.05em;
+  
+      &:not(.not-dot)::after {
+        content : '.';
+        color   : var(--color-text-brand);
+      }
+  
+      &.exclamation::after {
+        content : '!';
+      }
+    }
+  
+    h1,
+    .title-biggest {
+      font-size : var(--font-size-title-biggest);
+    }
+  
+    h2,
+    .title-big {
+      font-size : var(--font-size-title-big);
+    }
+  
+    h3,
+    .title-base {
+      font-size : var(--font-size-title-base);
+    }
+  
+    h4,
+    .title-small {
+      font-size : var(--font-size-title-small);
+    }
+  
+    h5,
+    .title-smaller {
+      font-size : var(--font-size-title-smaller);
+    }
+  }
