@@ -2,6 +2,7 @@ import Link from "next/link"
 import s from './MovieCard.module.scss'
 import ContentRatingTag from "../ContentRatingTag/ContentRatingTag"
 import MovieCategoryTag from "../MovieCategoryTag/MovieCategoryTag"
+import ExperienceTag from "../ExperienceTag/ExperienceTag"
 
 const MovieCard = ({
   title = 'Bob Esponja En Busca de los Pantalones Cuadrados',
@@ -18,6 +19,7 @@ const MovieCard = ({
     </div>
     <header className={s?.header}>
       <div className={s?.left}>
+        <ExperienceTag />
         <ContentRatingTag type={rating}/>
         <time className={s?.minutes}>{minutes} min</time>
       </div>
