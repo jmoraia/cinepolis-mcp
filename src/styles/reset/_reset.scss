@@ -68,37 +68,4 @@
     :where(button, button[type], input[type='button'], input[type='submit'], input[type='reset'])[disabled] {
       cursor : not-allowed;
     }
-  
-    @include no-reduce-motion {
-      :root {
-        --timing-transition-micro  : 100ms;
-        --timing-transition-base   : 200ms;
-        --timing-transition-smooth : 350ms;
-      }
-  
-      html {
-        scroll-behavior : smooth;
-      }
-    }
-  
-    @include reduce-motion {
-      *,
-      *::before,
-      *::after {
-        animation-duration        : 0.01ms !important;
-        animation-iteration-count : 1 !important;
-        scroll-behavior           : auto !important;
-        transition-duration       : 0.01ms !important;
-      }
-  
-      *::after,
-      *::before {
-        animation  : none !important;
-        transition : none !important;
-      }
-  
-      html {
-        scroll-behavior : auto;
-      }
-    }
   }

@@ -1,6 +1,7 @@
 @layer base {
   body {
-    background-color : var(--color-background-body);
+    background-color : var(--eds-color-bg-body-default);
+    color            : var(--eds-color-text-content-default);
   }
 
   a {
