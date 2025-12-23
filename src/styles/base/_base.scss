@@ -1,6 +1,11 @@
+:root {
+  --body-padding : var(--dimension-600);
+}
+
 @layer base {
   body {
     background-color : var(--eds-color-bg-body-default);
+    padding-top: var(--eds-spacing-600);
   }
 
   a {
