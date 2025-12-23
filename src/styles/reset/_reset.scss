@@ -23,6 +23,10 @@
     :where(p) {
       text-wrap : pretty;
     }
+
+    button {
+      all: unset;
+    }
   
     img {
       display           : block;

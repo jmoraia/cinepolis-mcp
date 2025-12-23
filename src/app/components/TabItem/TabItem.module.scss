@@ -1,0 +1,12 @@
+.tab-item {
+  display: inline-flex;
+  padding: var(--eds-spacing-spacing-200) var(--eds-spacing-spacing-400);
+  justify-content: center;
+  align-items: center;
+  color: var(--eds-color-text-content-prominent);
+  font-weight: 600;
+  
+  &.is-active {
+    border-bottom: var(--eds-border-width-large) solid var(--eds-color-border-action-brand);
+  }
+}
