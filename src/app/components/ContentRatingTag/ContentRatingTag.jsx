@@ -6,7 +6,7 @@ const ContentRatingTag = ({type = 'AA'}) => {
 
   return (
     <span 
-      className={clsx(s?.['content-rating-tag'], s?.[`${contentRating}`])}
+      className={clsx(s?.['content-rating-tag'], s?.[contentRating])}
     >
       {contentRating}
     </span>

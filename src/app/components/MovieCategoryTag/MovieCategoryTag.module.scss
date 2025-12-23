@@ -1,0 +1,36 @@
+.movie-category-tag {
+  display: inline-flex;
+  padding: var(--eds-spacing-spacing-50) var(--eds-spacing-spacing-150);
+  border-radius: var(--eds-round-full);
+  background: var(--eds-color-bg-surface-brand);
+  font-size: var(--eds-font-size-content-small);
+
+  &.concierto {
+    background: var(--eds-color-bg-surface-decorative-red);
+  }
+
+  &.festivales {
+    background: var(--eds-color-bg-surface-decorative-yellow);
+    color: var(--eds-color-text-decorative-black);
+    
+  }
+
+  &.garantía {
+    background: var(--eds-color-bg-surface-decorative-magenta);
+    
+  }
+
+  &.preventa {
+    background: var(--eds-color-bg-surface-decorative-teal);
+    color: var(--eds-color-text-decorative-black);
+  }
+
+  &.sala-de-arte {
+    background: var(--eds-color-bg-surface-decorative-black);
+    
+  }
+
+  &.quecine {
+    background: var(--eds-color-bg-surface-decorative-purple);
+  }
+}
