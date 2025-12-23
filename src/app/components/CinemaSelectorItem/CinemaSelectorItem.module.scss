@@ -1,0 +1,17 @@
+.cinema-selector-item {
+  display       : flex;
+  padding       : var(--eds-spacing-spacing-150) var(--eds-spacing-spacing-150) var(--eds-spacing-spacing-150) var(--eds-spacing-spacing-250);
+  align-items   : center;
+  gap           : var(--eds-spacing-spacing-150);
+  border-radius : var(--eds-round-full);
+  border        : var(--eds-border-width-medium) solid var(--eds-color-border-default);
+  background    : var(--eds-color-bg-action-default);
+  font-size     : var(--eds-font-size-content-small);
+
+  &.is-active {
+    font-weight   : 600;
+    border-radius : var(--eds-round-full);
+    border        : var(--eds-border-width-medium) solid rgba(0, 0, 0, 0.00);
+    background    : var(--eds-color-bg-action-active);
+  }
+}
