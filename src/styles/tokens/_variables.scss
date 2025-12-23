@@ -3,7 +3,7 @@
  */
 
 :root {
-  --color-blue-50: #f5f8f0;
+  --color-blue-50: #f5f8ff;
   --color-blue-100: #e5eeff;
   --color-blue-200: #c2d6ff;
   --color-blue-300: #99b9ff;
@@ -197,6 +197,9 @@
   --dimension-25000: 62.5rem;
   --eds-letter-spacing-dashboard: 0rem;
   --eds-component-input-height: 3.625rem;
+  --icon-library: iOS;
+  --viewport-width: 23.438rem;
+  --opacity-disabled: 2.5rem;
   --eds-color-bg-body-default: var(--color-blue-1000);
   --eds-color-bg-body-altern: var(--color-blue-950);
   --eds-color-bg-surface-default: var(--color-blue-950);
@@ -372,6 +375,19 @@
   --eds-size-fixed-4800: var(--dimension-4800);
   --eds-border-width-medium: var(--dimension-25);
   --eds-border-width-large: var(--dimension-50);
+  --eds-spacing-50: var(--dimension-50);
+  --eds-spacing-100: var(--dimension-100);
+  --eds-spacing-150: var(--dimension-150);
+  --eds-spacing-200: var(--dimension-200);
+  --eds-spacing-250: var(--dimension-250);
+  --eds-spacing-300: var(--dimension-300);
+  --eds-spacing-400: var(--dimension-400);
+  --eds-spacing-500: var(--dimension-500);
+  --eds-spacing-600: var(--dimension-600);
+  --eds-spacing-800: var(--dimension-800);
+  --eds-spacing-1000: var(--dimension-1000);
+  --eds-spacing-1600: var(--dimension-1600);
+  --eds-spacing-2000: var(--dimension-2000);
   --eds-spacing-spacing-50: var(--dimension-50);
   --eds-spacing-spacing-100: var(--dimension-100);
   --eds-spacing-spacing-200: var(--dimension-200);
