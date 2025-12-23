@@ -1,58 +1,79 @@
 import { register } from '@tokens-studio/sd-transforms'
 import StyleDictionary from 'style-dictionary'
 
-// will register them on StyleDictionary object
-// that is installed as a dependency of this package.
+register(StyleDictionary, { excludeParentKeys: true })
 
-// register(StyleDictionary)
+const normalize = (s = '') =>
+  String(s)
+    .toLowerCase()
+    .replace(/\s+/g, ' ')
+    .trim()
 
-register(StyleDictionary, {
-  excludeParentKeys: true,
-  // transform: (token) => {
-  // token.value will be resolved and transformed at this point
-  // },
+const isEcommerceKey = (k) => {
+  const n = normalize(k)
+  // cubre "E - Commerce", "E-Commerce", "Ecommerce", etc.
+  return n === 'e - commerce' || n === 'e-commerce' || n === 'ecommerce'
+}
+
+// 1) Preprocessor combinado: Scale => solo 2x, Typography => solo E-Commerce
+StyleDictionary.registerPreprocessor({
+  name: 'strip-scales-and-typography',
+  preprocessor: (tokens) => {
+    // --- SCALE ---
+    // Caso A: keys "Scale/1x", "Scale/2x"
+    for (const key of Object.keys(tokens)) {
+      if (key.startsWith('Scale/') && key !== 'Scale/2x') {
+        delete tokens[key]
+      }
+    }
+    // Caso B: { Scale: { '1x':..., '2x':... } }
+    if (tokens.Scale && typeof tokens.Scale === 'object') {
+      for (const scaleKey of Object.keys(tokens.Scale)) {
+        if (scaleKey !== '2x') delete tokens.Scale[scaleKey]
+      }
+    }
+
+    // --- TYPOGRAPHY: solo E - Commerce ---
+    // Caso A: keys "Typography/X"
+    for (const key of Object.keys(tokens)) {
+      if (key.startsWith('Typography/')) {
+        const after = key.slice('Typography/'.length)
+        if (!isEcommerceKey(after)) delete tokens[key]
+      }
+    }
+
+    // Caso B: { Typography: { 'E - Commerce': {...}, ... } }
+    if (tokens.Typography && typeof tokens.Typography === 'object') {
+      for (const typoKey of Object.keys(tokens.Typography)) {
+        if (!isEcommerceKey(typoKey)) delete tokens.Typography[typoKey]
+      }
+    }
+
+    return tokens
+  },
 })
 
 const sd = new StyleDictionary({
-  // make sure to have source match your token files!
-  // be careful about accidentally matching your package.json or similar files that are not tokens
   source: ['src/tokens.json'],
-  preprocessors: ['tokens-studio'], // <-- since 0.16.0 this must be explicit
+  preprocessors: ['strip-scales-and-typography', 'tokens-studio'],
   platforms: {
     css: {
-      transformGroup: 'tokens-studio', // <-- apply the tokens-studio transformGroup to apply all transforms
-      transforms: ['name/kebab'], // <-- add a token name transform for generating token names, default is camel
-      buildPath: './',
-      files: [
-        {
-          destination: '/src/styles/tokens/_variables.scss',
-          format: 'css/variables',
-          /*options: {
-            outputReferences: true,
-          },*/
-        },
-      ],
-    },
-    js: {
       transformGroup: 'tokens-studio',
+      transforms: ['name/kebab'],
       buildPath: './',
       files: [
         {
-          destination: 'variables.js',
-          format: 'javascript/es6',
-          /*options: {
-            outputReferences: true,
-          },*/
+          destination: 'src/styles/tokens/_variables.scss',
+          format: 'css/variables',
+          options: { outputReferences: true },
         },
       ],
     },
   },
   log: {
-    warnings: 'error', // 'warn' | 'error' | 'disabled'
-    verbosity: 'verbose', // 'default' | 'silent' | 'verbose'
-    errors: {
-      brokenReferences: 'console', // 'throw' | 'console'
-    },
+    warnings: 'error',
+    verbosity: 'verbose',
+    errors: { brokenReferences: 'console' },
   },
 })
 
