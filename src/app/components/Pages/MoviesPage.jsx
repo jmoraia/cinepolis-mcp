@@ -5,7 +5,6 @@ import CinemaSelector from '@/app/components/CinemaSelector/CinemaSelector'
 
 const MoviesPage = () => (
   <main>
-    <MovieCard />
   </main>
 )
 
