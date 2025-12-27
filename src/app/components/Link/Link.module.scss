@@ -1,0 +1,10 @@
+.link {
+    display: inline-flex;
+    align-items: center;
+    gap : var(--eds-spacing-50);
+  font-weight: 600;
+
+  &:not(:hover) {
+    text-decoration: none;
+  }
+}

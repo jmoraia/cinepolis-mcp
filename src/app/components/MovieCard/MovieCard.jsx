@@ -1,15 +1,14 @@
-import Link from "next/link"
 import s from './MovieCard.module.scss'
 import ContentRatingTag from "../ContentRatingTag/ContentRatingTag"
 import MovieCategoryTag from "../MovieCategoryTag/MovieCategoryTag"
-import ExperienceTag from "../ExperienceTag/ExperienceTag"
+import LinkComponent from "../Link/LinkComponent"
 
 const MovieCard = ({
   title = 'Bob Esponja En Busca de los Pantalones Cuadrados',
   rating = 'AA',
   minutes = 120, 
   category = 'Estreno',
-  image = 'https://tickets-static-content.cinepolis.com/pimcore/7851/assets/Mexico/Tickets/Movies/BobEsponjaEnBuscaDeLosPantalonesCuadrados/Es/SBSP_Desktop_Poster_720x1022_8/resource.jpg'}) => (
+  image = 'https://m.media-amazon.com/images/M/MV5BZTBiZDQ2MWEtYzE1MC00YmMyLTg1NjUtNzE2YTZlMjI3MGUxXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg'}) => (
   <article className={s?.['movie-card']}>
     <div className={s?.['movie-poster']}>
       <img
@@ -25,7 +24,7 @@ const MovieCard = ({
       <MovieCategoryTag type={category} />
     </header>
     <p className={s?.title}><strong>{title}</strong></p>
-    <Link className={s?.link} href="#">Ver detalle</Link>
+    <LinkComponent />
   </article>
 )
 
