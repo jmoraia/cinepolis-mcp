@@ -274,10 +274,9 @@
     body,
     .content-base {
       color       : var(--eds-color-text-content-default);
-      font-family : var(--eds-font-family-content), sans-serif;
-      font-weight : 500;
+      font-family : var(--eds-font-family-heading);
+      font-weight : 500 !important;
       font-size   : var(--eds-font-size-content-medium);
-      line-height : var(--font-height-content);
       letter-spacing: -1%;
       line-height: 1.4;
       font-weight: 300;

@@ -10,8 +10,6 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
-        <h1>Cinépolis App</h1>
-        <p>Hello world!</p>
         {children}
       </body>
     </html>

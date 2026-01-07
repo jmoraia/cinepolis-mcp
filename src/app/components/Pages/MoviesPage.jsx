@@ -5,6 +5,8 @@ import CinemaSelector from '@/app/components/CinemaSelector/CinemaSelector'
 
 const MoviesPage = () => (
   <main>
+    <h1>Cinépolis App</h1>
+    <p>Hello world!</p>
   </main>
 )
 
