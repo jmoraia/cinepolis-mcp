@@ -200,7 +200,7 @@
   --icon-library: iOS;
   --viewport-width: 23.438rem;
   --opacity-disabled: 2.5rem;
-  --eds-color-bg-body-default: var(--color-blue-1000);
+  --eds-color-bg-body-default: var(--color-magenta-500);
   --eds-color-bg-body-altern: var(--color-blue-950);
   --eds-color-bg-surface-default: var(--color-blue-950);
   --eds-color-bg-surface-altern: var(--color-blue-900);
@@ -245,10 +245,8 @@
   --eds-color-bg-action-danger: var(--color-danger-500);
   --eds-color-bg-action-danger-hover: var(--color-danger-600);
   --eds-color-bg-action-danger-pressed: var(--color-danger-700);
-  --eds-color-text-content-default: var(--color-grey-200);
   --eds-color-text-content-altern: var(--color-grey-300);
   --eds-color-text-content-prominent: var(--color-pure-white);
-  --eds-color-text-content-title: var(--color-pure-white);
   --eds-color-text-content-brand: var(--color-blue-500);
   --eds-color-text-content-danger: var(--color-danger-400);
   --eds-color-text-content-danger-altern: var(--color-danger-200);
@@ -413,5 +411,7 @@
   --eds-component-schedule-card-padding-x: var(--dimension-300);
   --eds-component-schedule-card-icon-size: var(--dimension-700);
   --eds-component-schedule-card-height: var(--dimension-1500);
+  --eds-color-text-content-default: var(--eds-color-bg-surface-success);
+  --eds-color-text-content-title: var(--eds-color-bg-action-danger);
   --eds-letter-spacing-body: var(--eds-letter-spacing-e-commerce);
 }
